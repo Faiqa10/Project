@@ -1,0 +1,172 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f9f9f9;
+  }
+  
+  .container {
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  #input {
+    padding: 10px;
+    font-size: 16px;
+    width: 70%;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .meal-item {
+    position: relative;
+    width: 150px;
+    cursor: pointer;
+  }
+  
+  .meal-item img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .meal-item .meal-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 0 0 8px 8px;
+  }
+  
+  .meal-item:hover .meal-name {
+    opacity: 1;
+  }
+  
+  .no-results {
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  #darkModeToggle{
+    position: relative;
+    margin-top: 50px;
+  }
+
+  /*Dark mode*/
+  .dark-mode {
+    background-color: #121212;
+    color: #c5ae2c;
+}
+
+.dark-mode .meal-item {
+    border-color: #444;
+}
+
+.dark-mode #searchInput,
+.dark-mode button {
+    background-color: #333;
+    color: #c5ae2c;
+    border: none;
+}
+
+.dark-mode #darkModeToggle {
+    background-color: #333;
+    color: #c5ae2c;
+    margin-top: 50px;
+    
+}
+  /*Animation*/
+
+
+.meal-item {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  margin: 15px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out; 
+  opacity: 0; 
+  transform: scale(0.9); 
+  animation: fadeIn 0.5s forwards; 
+}
+
+.meal-item img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out; 
+}
+
+.meal-item .meal-name {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px;
+  font-size: 1.1em;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.meal-item:hover {
+  transform: scale(1.05); 
+}
+
+.meal-item:hover img {
+  transform: scale(1.1); 
+}
+
+.meal-item:hover .meal-name {
+  opacity: 1;
+  transform: translateY(0); 
+}
+
+
+.no-results {
+  font-size: 1.2em;
+  color: #555;
+  text-align: center;
+  margin-top: 20px;
+}
+  
